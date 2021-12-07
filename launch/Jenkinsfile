@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+    stages{
+        stage('Launch'){
+            steps{
+              sh "docker run -d -p 8082:8080 gocalculator:1.0"
+              
+            }
+        }
+    }
+}

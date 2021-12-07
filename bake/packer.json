@@ -1,0 +1,36 @@
+{
+    "builders":[
+        {
+            "type": "docker",
+            "image": "golang:1.13",
+            "commit": true,
+            "changes": [
+                "WORKDIR /go/app",
+                "EXPOSE 8080",
+                "ENTRYPOINT go run ."      
+                ]
+        }
+    ],
+
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "calculator",
+            "destination": "/go/app"
+        },
+        {
+            "type": "shell",
+            "inline":["cd app", 
+                "go mod init app", 
+                "go get -d -v .", 
+                "go build"]
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-tag",
+            "repository": "gocalculator",
+            "tag": "1.0"
+          }
+    ]
+}
