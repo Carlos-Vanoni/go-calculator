@@ -20,10 +20,7 @@
         },
         {
             "type": "shell",
-            "inline":["cd app", 
-                "go mod init app", 
-                "go get -d -v .", 
-                "go build"]
+            "inline":["cd app", "go mod init app", "go get -d -v .", "go build"]
         }
     ],
     "post-processors": [
