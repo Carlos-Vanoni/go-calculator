@@ -6,7 +6,7 @@
             "commit": true,
             "changes": [
                 "WORKDIR /go/app",
-                "EXPOSE 8080",
+                "EXPOSE 8081",
                 "ENTRYPOINT go run ."      
                 ]
         }
