@@ -13,7 +13,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/calc/{op}/{number1}/{number2}", calculate)
 	r.HandleFunc("/calc/history", calcHistory)
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":8081", r)
 }
 
 func calculate(w http.ResponseWriter, r *http.Request) {
