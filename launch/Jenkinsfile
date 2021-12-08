@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Launch'){
             steps{
-              sh "docker run -d -p 8081:8080 gocalculator:1.0"
+              sh "docker run -d -p 8081:8081 gocalculator:1.0"
               
             }
         }
